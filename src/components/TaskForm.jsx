@@ -20,6 +20,10 @@ const AddButton = styled.input`
     border-radius: 1px;
 `;
 
+const Heading = styled.h4`
+    margin: 10px 0 5px;
+`;
+
 const AcceptButton = styled.button`
     color: black;
     background: white;
@@ -41,7 +45,7 @@ export default ({
             {taskFormVisible && (
                 <Div>
                     <form action="" onSubmit={onTaskSubmit}>
-                        <h4><label htmlFor={'taskAdd'}>Добавить дело:</label></h4>
+                        <Heading><label htmlFor={'taskAdd'}>Добавить дело:</label></Heading>
 
                         <input type="text" name={'taskAdd'} onChange={onNameChange} value={taskName}
                                placeholder={"Что делать?"}/>
@@ -51,7 +55,7 @@ export default ({
                             <AddButton type="submit" value={"добавить"}/>
                         </div>
 
-                        <h4><label htmlFor={'taskChoose'}>Выбрать дело:</label></h4>
+                        <Heading><label htmlFor={'taskChoose'}>Выбрать дело:</label></Heading>
                         {taskDropdownList}
                         <AcceptButton onClick={onFormClose}>ОК</AcceptButton>
                     </form>
